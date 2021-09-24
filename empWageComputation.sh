@@ -1,21 +1,15 @@
 #!/bin/bash -x
 echo "Welcome to Employee Wage Computation Program"
 
-EMPL1=1;
-EMPL2=2;
-EMPL3=3
-WAGE_PER_HOUR=20;
-EMPL_CHECK=$((RANDOM % 4))
+IS_PART_TIME=1;
+EMPL_RATE_PER_HOUR=20;
+EMPL_CHECK=$((RANDOM % 2))
 case $EMPL_CHECK in
-        $EMPL1)
-            EMPL_HOURS=8
-            ;;
-        $EMPL2)
-            EMPL_HOURS=4
-            ;;
-        $EMPL3)
-            EMPL_HOURS=2
-            ;;
+        $IS_PART_TIME)
+           EMPL_HOURS=8
+           ;;
         *)
+           EMPL_HOURS=0
+           ;;
 esac
-TOTAL_WAGE_IN_DAYS=$(($EMPL_HOURS * $WAGE_PER_HOUR))
+SALARY_PART_TIME=$(($EMPL_HOURS * $EMPL_RATE_PER_HOUR))
